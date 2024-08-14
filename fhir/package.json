@@ -1,0 +1,9 @@
+
+{
+  "dependencies": {
+    "hl7.fhir.fr.core": "2.0.1"
+  },
+  "fhirVersions": [
+    "4.0.1"
+  ]
+}
