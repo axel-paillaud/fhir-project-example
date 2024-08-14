@@ -10,6 +10,25 @@ document.getElementById("fetch-patient").addEventListener("click", () => {
     })
     .then((data) => {
       console.log("Patient FHIR Data:", data);
+
+      // Extraire des informations spécifiques FHIR
+      const patientName =
+        data.name[0].given.join(" ") + " " + data.name[0].family;
+      const patientId = data.identifier[0].value;
+      const patientGender = data.gender;
+      const patientBirthDate = data.birthDate;
+
+      // Afficher les informations du patient
+      document.getElementById("patient-info").innerHTML = `
+           <p><strong>ID:</strong> ${patientId}</p>
+           <p><strong>Name:</strong> ${patientName}</p>
+           <p><strong>Gender:</strong> ${patientGender}</p>
+           <p><strong>Birth Date:</strong> ${patientBirthDate}</p>
+       `;
+
+      // Afficher la narrative FHIR
+      const narrativeDiv = data.text.div;
+      document.getElementById("patient-narrative").innerHTML = narrativeDiv;
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
