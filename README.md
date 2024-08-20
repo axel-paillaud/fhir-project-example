@@ -16,7 +16,7 @@ Make sure to be in the **frontend** directory :
 
 Default port : 8080
 
-Go to the url : [http://localhost:8080]
+Go to the url : [http://localhost:8080](http://localhost:8080)
 
 ### Launch backend server
 
