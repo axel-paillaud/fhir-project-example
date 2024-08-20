@@ -1,24 +1,88 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>FHIR Patient Example</title>
-    </head>
-    <body>
-        <h1>FHIR Patient Example</h1>
-        <button id="fetch-patient">Fetch Patient Data</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>FHIR Patient Example</title>
+  </head>
+  <body>
+    <h1 class="title">FHIR Patient example</h1>
+    <button id="js-fetch-patient">Fetch Patient Data</button>
 
-        <h2>Patient Information</h2>
-        <div id="patient-info">
-            <!-- Informations du patient affichées ici -->
-        </div>
+    <div class="subtitle">Patient Information</div>
+    <div id="patient-info">
+      <!-- Patient Information here -->
+    </div>
 
-        <h2>FHIR Narrative</h2>
-        <div id="patient-narrative">
-            <!-- Narrative FHIR affichée ici -->
-        </div>
+    <div class="subtitle">FHIR Narrative</div>
+    <div id="patient-narrative">
+      <!-- FHIR Narrative here -->
+    </div>
 
-        <script src="script.js"></script>
-    </body>
+    <h3 class="title mt-16">Send and convert to HL7v2 example</h3>
+
+    <div class="form-result-container">
+
+      <form id="js-patient-form" class="patient-form">
+        <h4>Informations du patient</h4>
+
+      <div class="form-container">
+        <label for="patientId">ID Patient:</label>
+        <input type="text" id="patientId" name="patientId"><br><br>
+      </div>
+
+      <div class="form-container">
+        <label for="firstName">Prénom:</label>
+        <input type="text" id="firstName" name="firstName"><br><br>
+      </div>
+
+      <div class="form-container">
+        <label for="lastName">Nom:</label>
+        <input type="text" id="lastName" name="lastName"><br><br>
+      </div>
+
+      <div class="form-container">
+        <label for="dob">Date de Naissance:</label>
+        <input type="date" id="dob" name="dob"><br><br>
+      </div>
+
+      <div class="form-container">
+        <label for="gender">Sexe:</label>
+        <select id="gender" name="gender">
+          <option value="M">Homme</option>
+          <option value="F">Femme</option>
+        </select><br><br>
+      </div>
+
+      <h4>Médicaments administrés</h4>
+
+      <div class="form-container">
+        <label for="medName">Nom du médicament:</label>
+        <input type="text" id="medName" name="medName"><br><br>
+      </div>
+
+      <div class="form-container">
+        <label for="dose">Dose:</label>
+        <input type="text" id="dose" name="dose"><br><br>
+      </div>
+
+      <div class="form-container">
+        <label for="frequency">Fréquence:</label>
+        <input type="text" id="frequency" name="frequency"><br><br>
+      </div>
+
+      <input type="submit" value="Envoyer">
+    </form>
+
+      <div class="result-container">
+        <h4>Result</h4>
+        <textarea rows="10" cols="80" id="js-hl7-result"></textarea>
+      </div>
+
+    </div>
+
+    <script src="fhir.js"></script>
+    <script src="hl7.js"></script>
+  </body>
 </html>

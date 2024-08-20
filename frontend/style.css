@@ -1,0 +1,31 @@
+.title {
+    font-size: 36px;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 16px 0;
+}
+
+.mt-16 {
+    margin-top: 64px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.patient-form {
+    max-width: 256px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-result-container {
+    display: flex;
+    gap: 64px;
+}
