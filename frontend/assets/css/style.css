@@ -40,7 +40,7 @@ main {
 .patient-form {
     max-width: 256px;
     display: flex;
-    gap: 8px;
+    gap: 32px;
 }
 
 .form-result-container {
