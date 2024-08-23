@@ -1,3 +1,22 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: #d4d4d4;
+    padding: 24px 16px;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 32px;
+}
+
 .title {
     font-size: 36px;
 }
@@ -21,11 +40,11 @@
 .patient-form {
     max-width: 256px;
     display: flex;
-    flex-direction: column;
     gap: 8px;
 }
 
 .form-result-container {
     display: flex;
-    gap: 64px;
+    flex-direction: column;
+    gap: 16px;
 }
